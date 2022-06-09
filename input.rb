@@ -12,5 +12,5 @@
 #nome = gets.chomp #já executa o chomp logo depois de capturar o dado
 
 p "Digite seu nome: "
-nome1 = gets.chomp
-#puts "Seu nome é #{nome1} "
+nome = gets
+puts "Seu nome é #{nome} "
