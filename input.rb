@@ -10,6 +10,8 @@
 #p nome #imprime o nome salvo na variavel
 #p nome.chomp() #retorna a string sem o ultimo caractere especial
 #nome = gets.chomp #já executa o chomp logo depois de capturar o dado
+#gets.chomp.to_i #remove o \n com o método chomp e transforma em inteiro
+# com o to_i
 
 p "Digite seu nome: "
 nome = gets

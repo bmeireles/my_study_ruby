@@ -53,6 +53,22 @@ puts "Eu sou maior que 50" if valor > 50
 
 #O unless é o inverso do if, no sentido de executar uma ação se a
 # condição não for verdadeira
-#unless condição
-#   faca_isso
-#end
+unless valor == 100
+   puts "O valor não é igual a 100"
+end
+
+#Ternario: if e else em uma linha só
+#Estrutura do ternario: condição ? faca_isso_se_verdadeira : faca_isso_se_falsa
+valor > 50 ? puts "Eu sou maior que 50" : "Eu sou menor que 50"
+
+#Case: varias condições em um unico bloco
+linguagem = "ruby"
+case linguagem
+when "ruby"
+    puts "Bem vindo ao curso de ruby"
+when "golang"
+    puts "Curso não disponivel"
+else
+    puts "Nao conheço essa linguagem"
+end
+
