@@ -12,11 +12,12 @@ lista << numero1 << numero2 << numero3 << numero4 << numero5
 p "Agora digite o numero que deseja encontrar na lista: "
 numero = gets.chomp.to_i
 #numero = 10
-#i = 0
-for i in lista
+i = 0
+while  i < lista.length #for i in lista
     if numero == lista[i]
-    puts "O numero #{numero} está presente no index #{i}"
+    puts "O numero #{numero} está presente no index #{i}."
     end
+    i+=1
 end
 #puts "O numero #{numero} nao se encontra na lista."
 
