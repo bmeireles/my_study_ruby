@@ -4,11 +4,30 @@
 # information that the array is sorted and reduce the time complexity to O(Log n).
 
 lista = [1, 3, 7, 10, 14, 18, 23, 26, 28, 31, 34, 37]
-esq = lista.first
-dir = lista.last
+esq = 0 #é a posição, nao o numero 
+dir = 11
 def bin_search(lista, esq, dir, numero)
     #something
     if dir >= esq
         meio = esq + (dir - esq)/2
+
+        #Se o numero estiver no indice do meio:
+        if lista[meio] == numero
+            return meio
+        end
+
+        #Se o numero escolhido for menor que o do meio,
+        # ele deve estar na primeira metade da lista:
+        if lista[meio] > numero
+            return bin_search(lista, esq, meio - 1, numero)
+        end
+
+        #Se não estiver em nenhuma das opções anteriores,
+        # o numero está na segunda metade da lista:
+        return bin_search(lista, meio + 1, dir, numero)
+    end
+
+    #Se o numero não estiver presente na lista:
+    return -1
 
 end
