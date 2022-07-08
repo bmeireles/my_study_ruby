@@ -9,7 +9,7 @@
 #4-Escrever os valores em um novo array
 #5-Print do array final ordenado.
 
-def count_sort(array)
+def count_sort(array, min, max)
 
     #Primeiro criamos o array que receberá os valores finais sequenciados:
     lista_final = Array.new
@@ -19,7 +19,14 @@ def count_sort(array)
     puts lista_final
 
     #Depois criamos um array para guardar a contagem de cada caractere:
+    n = max-min + 1
+    count = Array.new(n, 0)
+    len = array.length
     
+    #Percorrer os elementos da lista:
+    for i in array
+        
+
 
 
 
