@@ -16,18 +16,36 @@ def count_sort(array, min, max)
     for i in array
         lista_final.append(0)
     end
-    puts lista_final
+    sorted_index = 0
 
-    #Depois criamos um array para guardar a contagem de cada caractere:
+    #Depois criamos um array para guardar a contagem de cada caractere (array auxiliar):
     n = max-min + 1
     count = Array.new(n, 0)
     len = array.length
     
-    #Percorrer os elementos da lista:
-    for i in array
-        
+    #Percorrer os elementos da lista, e para cada elemento fazer a contagem
+    # no array auxiliar:
+    (0..array.length - 1).each do |i|
+      if count[array[i]].nil?
+        count[array[i]] = 0
+      end
+      count[array[i]] += 1
+    end
 
+    (0..count.length - 1).each do |i|
+        while not count[i].nil? and count[i] > 0
+          lista_final[sorted_index] = i
+          sorted_index += 1
+          count[i] -= 1
+        end
+    end
 
+    lista_final
 
 
 end
+
+lista = [5,1,4,2,8]
+puts " The array to be sorted is: #{lista}"
+puts "##Counting sort result##"
+p count_sort(lista, 1, 8)
